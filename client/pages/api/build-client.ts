@@ -6,7 +6,7 @@ const BuildClient = ({ req }: any) => {
     return axios.create({
       baseURL:
         //'http://ingress-nginx-controller.ingress-nginx.svc.cluster.local/',
-        'myfinapi.dev',
+        'http://www.myfinapi.dev',
       headers: req.headers,
     });
   } else {
