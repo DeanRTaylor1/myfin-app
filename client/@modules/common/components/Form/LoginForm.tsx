@@ -12,7 +12,7 @@ const LoginForm: React.FC = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const { doRequest, errors } = DoRequest({
-    url: `${process.env.NEXT_PUBLIC_API_URL}api/users/signin`,
+    url: `/api/users/signin`,
     method: 'post',
     body: { email, password },
     onSuccess: () => Router.push('/'),
