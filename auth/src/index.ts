@@ -11,6 +11,7 @@ const start = async () => {
   /* console.log('\x1b[34m%s\x1b[0m', 'env:' + process.env.NODE_ENV);
   console.log('\x1b[34m%s\x1b[0m', process.env.NODE_ENV === 'production');
   console.log('Test');
+  test
   */
 
   if (!process.env.JWT_KEY) {

@@ -74,7 +74,7 @@ spec:
             - name: GITHUB_CLIENT_SECRET
               valueFrom:
                 secretKeyRef:
-                  name: GITHUB-client-secret
+                  name: github-client-secret
                   key: GITHUB_CLIENT_SECRET
 ---
 apiVersion: v1
