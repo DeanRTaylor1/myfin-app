@@ -53,6 +53,7 @@ const start = () => __awaiter(void 0, void 0, void 0, function* () {
             (0, stocks_1.fetchStocks)();
         });
         //test
+        //test
         console.log('\x1b[34m%s\x1b[0m', 'Connected to Postgres');
     }
     catch (err) {
