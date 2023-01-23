@@ -26,6 +26,11 @@ spec:
                 secretKeyRef:
                   name: next-public-stocks-api-key
                   key: NEXT_PUBLIC_STOCKS_API_KEY
+            - name: NEXT_PUBLIC_NY_TIMES_API_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: next-public-ny-times-api-key
+                  key: NEXT_PUBLIC_NY_TIMES_API_KEY
 ---
 apiVersion: v1
 kind: Service
