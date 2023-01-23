@@ -15,6 +15,17 @@ spec:
       containers:
         - name: client
           image: deanrtaylor/financeclient
+          env:
+            - name: NEXT_PUBLIC_API_URL
+              valueFrom:
+                secretKeyRef:
+                  name: next-api-url
+                  key: NEXT_PUBLIC_API_URL
+            - name: NEXT_PUBLIC_STOCKS_API_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: next-public-stocks-api-key
+                  key: NEXT_PUBLIC_STOCKS_API_KEY
 ---
 apiVersion: v1
 kind: Service
