@@ -21,5 +21,3 @@ jobs:
       - uses: digitalocean/action-doctl@v2
         with:
           token: ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
-      - run: doctl kubernetes cluster kubeconfig save myfin-app
-      - run: kubectl rollout restart deployment auth-depl
