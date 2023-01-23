@@ -40,8 +40,7 @@ app.use(express.json());
 //the code below means that you have to put https:// in your post requests!
 app.use(
   cookieSession({
-    signed: false,
-    secure: process.env.NODE_ENV !== 'test', //require https if we are in prod
+    signed: false, //require https if we are in prod
   })
 );
 
