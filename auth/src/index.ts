@@ -45,6 +45,7 @@ const start = async () => {
       console.log('Cron running');
       fetchStocks();
     });
+    //test
 
     console.log('\x1b[34m%s\x1b[0m', 'Connected to Postgres');
   } catch (err) {

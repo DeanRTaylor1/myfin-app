@@ -52,6 +52,7 @@ const start = () => __awaiter(void 0, void 0, void 0, function* () {
             console.log('Cron running');
             (0, stocks_1.fetchStocks)();
         });
+        //test
         console.log('\x1b[34m%s\x1b[0m', 'Connected to Postgres');
     }
     catch (err) {
