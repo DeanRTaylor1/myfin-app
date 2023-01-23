@@ -76,6 +76,11 @@ spec:
                 secretKeyRef:
                   name: github-client-secret
                   key: GITHUB_CLIENT_SECRET
+            - name: STOCKS_API_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: stocks-api-key
+                  key: STOCKS_API_KEY
 ---
 apiVersion: v1
 kind: Service

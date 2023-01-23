@@ -23,10 +23,8 @@ const start = () => __awaiter(void 0, void 0, void 0, function* () {
     /* console.log('\x1b[34m%s\x1b[0m', 'env:' + process.env.NODE_ENV);
     console.log('\x1b[34m%s\x1b[0m', process.env.NODE_ENV === 'production');
     console.log('Test');
+    test
     */
-    if (!process.env.STOCKS_API_KEY) {
-        throw new Error('STOCKS API KEY MUST BE DEFINED');
-    }
     if (!process.env.JWT_KEY) {
         throw new Error('JWT_KEY must be defined');
     }
@@ -55,7 +53,6 @@ const start = () => __awaiter(void 0, void 0, void 0, function* () {
             console.log('Cron running');
             (0, stocks_1.fetchStocks)();
         });
-        //test
         //test
         console.log('\x1b[34m%s\x1b[0m', 'Connected to Postgres');
     }
