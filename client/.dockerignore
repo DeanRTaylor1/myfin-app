@@ -1,0 +1,3 @@
+node_modules
+#Without the below code Skaffold kept auto building the image
+.git/*

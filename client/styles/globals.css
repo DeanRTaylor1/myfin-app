@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Martel+Sans:wght@200;300;400;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .navbar {
+    @apply z-40 w-full flex p-2 justify-between items-center text-lg border-gray-200 border-b border-dashed h-16;
+  }
+  .navItem {
+    @apply text-sm font-bold hover:cursor-pointer hover:underline underline-offset-4 transition-all ease-in-out duration-300;
+  }
+  .navButton {
+    @apply inline-block px-6 py-2.5 bg-blue-400 text-white font-bold text-xs leading-tight uppercase rounded-md shadow-md hover:bg-blue-500 hover:shadow-lg focus:bg-blue-500 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-600 active:shadow-lg transition duration-150 ease-in-out min-w-[calc(93px)];
+  }
+  .mobileNav {
+    @apply min-h-[100vh] h-[100vh] w-[100vw] p-6 origin-top-right transition-all ease-in-out duration-300 shadow-2xl bg-white fixed top-0 left-0  md:hidden;
+  }
+  .profileMenu {
+    @apply min-h-[calc(30rem)] hidden md:flex h-screen w-96 p-4  flex-col justify-between transition-all duration-200 shadow-2xl bg-white fixed top-0 rounded-md;
+  }
+  .logo {
+    @apply text-3xl font-extrabold w-max;
+  }
+  .input {
+    @apply rounded w-full border-slate-200 border-b border-t border-l border-r p-2 h-12 flex justify-start items-center placeholder:text-sm placeholder:text-zinc-500 active:text-zinc-900 
+    focus:text-zinc-900 active:border-none focus:outline-none active:outline-none hover:cursor-text active:cursor-text focus:ring-white focus:shadow-xl active:shadow-xl bg-white font-extralight placeholder:font-extralight transition-all ease-in-out duration-700;
+  }
+  .inputError {
+    @apply rounded w-full border-red-500 border-b border-t border-l border-r p-2 h-12 flex justify-start items-center placeholder:text-sm placeholder:text-zinc-500 active:text-zinc-900 
+    focus:text-zinc-900 active:border-none focus:outline-none active:outline-none hover:cursor-text active:cursor-text focus:ring-white focus:shadow-xl active:shadow-xl bg-white font-extralight placeholder:font-extralight transition-all ease-in-out duration-700;
+  }
+  .signInButton {
+    @apply w-full h-12 inline-block px-6 py-2.5 bg-blue-400 text-white font-bold text-sm  leading-tight uppercase rounded-md shadow-md hover:bg-blue-500 hover:shadow-lg focus:bg-blue-500 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-600 active:shadow-lg transition duration-150 ease-in-out;
+  }
+  .errorMessage {
+    @apply h-2 text-xs text-red-500;
+  }
+  .baseLayout {
+    @apply overflow-x-hidden p-4 flex min-w-[95vw] flex-col items-center min-h-screen  h-fit bg-gray-100;
+  }
+}
