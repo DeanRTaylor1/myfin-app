@@ -49,7 +49,7 @@ const start = async () => {
       fetchStocks();
     });
     //test
-    //test
+
     console.log('\x1b[34m%s\x1b[0m', 'Connected to Postgres');
   } catch (err) {
     console.error(err);

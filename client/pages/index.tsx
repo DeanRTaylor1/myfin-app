@@ -119,3 +119,4 @@ export default function Home({ currentUser }: any) {
 Home.getInitialProps = async (context: any, client: any, currentUser: any) => {
   return currentUser;
 };
+//test
