@@ -20,7 +20,7 @@ const passport_github2_1 = require("passport-github2");
 passport_1.default.use(new passport_github2_1.Strategy({
     clientID: process.env.GITHUB_CLIENT_ID,
     clientSecret: process.env.GITHUB_CLIENT_SECRET,
-    callbackURL: `${process.env.API_URL}api/auth/github/callback`,
+    callbackURL: `${process.env.API_URL}api/users/auth/github/callback`,
     scope: ['user:email'],
 }, function verify(accessToken, refreshToken, profile, cb) {
     return __awaiter(this, void 0, void 0, function* () {
@@ -46,7 +46,7 @@ passport_1.default.use(new passport_github2_1.Strategy({
 passport_1.default.use(new passport_facebook_1.Strategy({
     clientID: process.env.FACEBOOK_CLIENT_ID,
     clientSecret: process.env.FACEBOOK_CLIENT_SECRET,
-    callbackURL: `${process.env.API_URL}api/auth/facebook/callback`,
+    callbackURL: `${process.env.API_URL}api/users/auth/facebook/callback`,
     profileFields: ['id', 'emails', 'displayName'],
 }, function verify(accessToken, refreshToken, profile, cb) {
     return __awaiter(this, void 0, void 0, function* () {
@@ -72,7 +72,7 @@ passport_1.default.use(new passport_facebook_1.Strategy({
 passport_1.default.use(new GoogleStrategy({
     clientID: process.env.GOOGLE_CLIENT_ID,
     clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-    callbackURL: `${process.env.API_URL}api/auth/google/callback`,
+    callbackURL: `${process.env.API_URL}api/users/auth/google/callback`,
     state: true,
 }, (req, accessToken, refreshToken, profile, cb) => __awaiter(void 0, void 0, void 0, function* () {
     console.log('profile' + profile.provider + ' ' + profile.email + ' ' + profile.id);

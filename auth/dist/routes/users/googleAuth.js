@@ -12,14 +12,14 @@ const jsonwebtoken_1 = __importDefault(require("jsonwebtoken"));
 const successLoginUrl = 'http://localhost:3000/auth/signin';
 const errorLoginUrl = 'http://localhost:3000/auth/signin';
 router.get('/api/login/google', passport_1.default.authenticate('google', { scope: ['profile', 'email'] }));
-router.get('/api/auth/google/callback', passport_1.default.authenticate('google', {
-    successReturnToOrRedirect: '/api/googleconfirm',
-    failureRedirect: '/api/googlefail',
+router.get('/api/users/auth/google/callback', passport_1.default.authenticate('google', {
+    successReturnToOrRedirect: '/api/users/googleconfirm',
+    failureRedirect: '/api/users/googlefail',
 }), (req, res) => {
     console.log('Req:' + req);
     res.send('Thank you for signing in!');
 });
-router.get('/api/googleconfirm', (req, res) => {
+router.get('/api/users/googleconfirm', (req, res) => {
     var _a, _b;
     console.log((_a = req.session) === null || _a === void 0 ? void 0 : _a.passport.user);
     const { id, username, email } = (_b = req.session) === null || _b === void 0 ? void 0 : _b.passport.user;
@@ -28,9 +28,9 @@ router.get('/api/googleconfirm', (req, res) => {
     //env variable checked in index.ts
     //store in session object
     req.session = { jwt: userJwt };
-    res.status(201).redirect('http://localhost:3000/auth/confirm/oauth');
+    res.status(201).redirect('http://www.myfin.dev/auth/confirm/oauth');
 });
-router.get('/api/googlefail', (req, res) => {
+router.get('/api/users/googlefail', (req, res) => {
     console.log('Auth does not match');
-    res.status(400).redirect('http://localhost:3000/auth/error');
+    res.status(400).redirect('http://www.myfin.dev/auth/error');
 });
