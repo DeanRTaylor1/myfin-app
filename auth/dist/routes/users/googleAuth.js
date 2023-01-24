@@ -28,9 +28,9 @@ router.get('/api/users/googleconfirm', (req, res) => {
     //env variable checked in index.ts
     //store in session object
     req.session = { jwt: userJwt };
-    res.status(201).redirect('http://www.myfin.dev/auth/confirm/oauth');
+    res.status(201).redirect('http://www.myfinapi.dev/auth/confirm/oauth');
 });
 router.get('/api/users/googlefail', (req, res) => {
     console.log('Auth does not match');
-    res.status(400).redirect('http://www.myfin.dev/auth/error');
+    res.status(400).redirect('http://www.myfinapi.dev/auth/error');
 });

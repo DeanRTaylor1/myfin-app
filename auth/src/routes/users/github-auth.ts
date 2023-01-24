@@ -30,12 +30,12 @@ router.get('/api/users/githubconfirm', (req: Request, res: Response) => {
   //store in session object
   req.session = { jwt: userJwt };
 
-  res.status(201).redirect('http://www.myfin.dev/auth/confirm/oauth');
+  res.status(201).redirect('http://www.myfinapi.dev/auth/confirm/oauth');
 });
 
 router.get('/api/users/githubfail', (req: Request, res: Response) => {
   console.log('Auth does not match');
 
-  res.status(400).redirect('http://www.myfin.dev/auth/confirm/oauth');
+  res.status(400).redirect('http://www.myfinapi.dev/auth/confirm/oauth');
 });
 export { router as githubRouter };

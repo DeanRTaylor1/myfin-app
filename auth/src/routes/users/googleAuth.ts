@@ -34,12 +34,12 @@ router.get('/api/users/googleconfirm', (req: Request, res: Response) => {
   //store in session object
   req.session = { jwt: userJwt };
 
-  res.status(201).redirect('http://www.myfin.dev/auth/confirm/oauth');
+  res.status(201).redirect('http://www.myfinapi.dev/auth/confirm/oauth');
 });
 
 router.get('/api/users/googlefail', (req: Request, res: Response) => {
   console.log('Auth does not match');
 
-  res.status(400).redirect('http://www.myfin.dev/auth/error');
+  res.status(400).redirect('http://www.myfinapi.dev/auth/error');
 });
 export { router as googleRouter };
