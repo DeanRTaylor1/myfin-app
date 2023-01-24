@@ -31,7 +31,7 @@ const LoginForm: React.FC = () => {
 
     doRequest();
   };
-
+  /*
   const redirectToGoogle = async () => {
     console.log(`/api/login/google`);
     let timer: NodeJS.Timer | null = null;
@@ -71,6 +71,7 @@ const LoginForm: React.FC = () => {
       }, 500);
     }
   };
+  */
 
   const oAuthLogin = async (strategy: string) => {
     let timer: NodeJS.Timer | null = null;
@@ -125,7 +126,7 @@ const LoginForm: React.FC = () => {
             <FcGoogle
               size={35}
               className='hover:cursor-pointer hover:opacity-75'
-              onClick={() => oAuthLogin('github')}
+              onClick={() => oAuthLogin('google')}
             />
             <BsFacebook
               size={30}
