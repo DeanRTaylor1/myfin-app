@@ -24,6 +24,13 @@ spec:
                 name: auth-srv
                 port:
                   number: 3000
+          - path: /api/login/?(.*)
+            pathType: Prefix
+            backend:
+              service:
+                name: auth-srv
+                port:
+                  number: 3000
           - path: /?(.*) #this should be at the bottom to ensure that our api routes get called if required
             pathType: Prefix
             backend:
