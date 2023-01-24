@@ -12,7 +12,7 @@ export default function About({ currentUser }: any) {
     <Fragment>
       <div className='w-[calc(100vw)] h-fit min-h-[calc(90vh)] flex flex-col items-start justify-start gap-10 z-10'>
         <div className='w-[100%] bg-white h-fit relative p-10 flex flex-col  justify-start items-center gap-4'>
-          <div className='w-full max-w-[1200px] flex flex-col justify-center items-center md:flex-row'>
+          <div className='w-[90%] max-w-[1200px] flex flex-col justify-center items-center md:flex-row'>
             <div className='flex flex-col gap-8 justify-center items-center p-4 min-w-[450px]'>
               <h1 className='w-full font-extrabold text-xl text-left'>
                 About us:
