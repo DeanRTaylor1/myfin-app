@@ -82,10 +82,7 @@ spec:
                   name: stocks-api-key
                   key: STOCKS_API_KEY
             - name: API_URL
-              valueFrom:
-                secretKeyRef:
-                  name: api-url
-                  key: API_URL
+              value: 'http://www.myfinapi.dev/'
             - name: CLIENT_URL
               valueFrom:
                 secretKeyRef:
