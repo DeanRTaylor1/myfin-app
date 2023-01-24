@@ -59,7 +59,7 @@ passport.use(
     {
       clientID: process.env.FACEBOOK_CLIENT_ID!,
       clientSecret: process.env.FACEBOOK_CLIENT_SECRET!,
-      callbackURL: `http://www.myfinapi.dev/api/users/auth/facebook/callback`,
+      callbackURL: `https://www.myfinapi.dev/api/users/auth/facebook/callback`,
       profileFields: ['id', 'emails', 'displayName'],
     },
     async function verify(accessToken, refreshToken, profile, cb) {
