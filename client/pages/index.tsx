@@ -51,9 +51,9 @@ export default function Home({ currentUser }: any) {
               <h1 className='w-full font-bold text-2xl '>
                 Keep an eye on things.
               </h1>
-              <h3 className='w-fit '>
+              <h2 className='w-fit '>
                 Making recording your finances easier with MyFin.
-              </h3>
+              </h2>
             </div>
             <div>
               <Image
