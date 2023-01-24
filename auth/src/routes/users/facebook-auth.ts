@@ -13,10 +13,10 @@ router.get(
 );
 
 router.get(
-  '/api/auth/facebook/callback',
+  '/api/users/auth/facebook/callback',
   passport.authenticate('facebook', {
-    successReturnToOrRedirect: '/api/facebookconfirm',
-    failureRedirect: '/api/facebookfail',
+    successReturnToOrRedirect: '/api/users/facebookconfirm',
+    failureRedirect: '/api/users/facebookfail',
   }),
   (req, res) => {
     console.log('Req:' + req);
@@ -25,7 +25,7 @@ router.get(
   }
 );
 
-router.get('/api/facebookconfirm', (req: Request, res: Response) => {
+router.get('/api/users/facebookconfirm', (req: Request, res: Response) => {
   console.log(req.session?.passport.user);
   const { id, username, email } = req.session?.passport.user;
   console.log('id: ' + id);
@@ -34,12 +34,12 @@ router.get('/api/facebookconfirm', (req: Request, res: Response) => {
   //store in session object
   req.session = { jwt: userJwt };
 
-  res.status(201).redirect('http://localhost:3000/auth/confirm/oauth');
+  res.status(201).redirect('www.myfin.dev/auth/confirm/oauth');
 });
 
-router.get('/api/facebookfail', (req: Request, res: Response) => {
+router.get('/api/users/facebookfail', (req: Request, res: Response) => {
   console.log('Auth does not match');
 
-  res.status(400).redirect('http://localhost:3000/auth/error');
+  res.status(400).redirect('www.myfin.dev/auth/confirm/oauth');
 });
 export { router as facebookRouter };

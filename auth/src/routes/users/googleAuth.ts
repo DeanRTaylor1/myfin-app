@@ -13,10 +13,10 @@ router.get(
 );
 
 router.get(
-  '/api/auth/google/callback',
+  '/api/users/auth/google/callback',
   passport.authenticate('google', {
-    successReturnToOrRedirect: '/api/googleconfirm',
-    failureRedirect: '/api/googlefail',
+    successReturnToOrRedirect: '/api/users/googleconfirm',
+    failureRedirect: '/api/users/googlefail',
   }),
   (req, res) => {
     console.log('Req:' + req);
@@ -25,7 +25,7 @@ router.get(
   }
 );
 
-router.get('/api/googleconfirm', (req: Request, res: Response) => {
+router.get('/api/users/googleconfirm', (req: Request, res: Response) => {
   console.log(req.session?.passport.user);
   const { id, username, email } = req.session?.passport.user;
   console.log('id: ' + id);
@@ -34,12 +34,12 @@ router.get('/api/googleconfirm', (req: Request, res: Response) => {
   //store in session object
   req.session = { jwt: userJwt };
 
-  res.status(201).redirect('http://localhost:3000/auth/confirm/oauth');
+  res.status(201).redirect('http://www.myfin.dev/auth/confirm/oauth');
 });
 
-router.get('/api/googlefail', (req: Request, res: Response) => {
+router.get('/api/users/googlefail', (req: Request, res: Response) => {
   console.log('Auth does not match');
 
-  res.status(400).redirect('http://localhost:3000/auth/error');
+  res.status(400).redirect('http://www.myfin.dev/auth/error');
 });
 export { router as googleRouter };
