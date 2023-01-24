@@ -40,6 +40,6 @@ router.get('/api/users/facebookconfirm', (req: Request, res: Response) => {
 router.get('/api/users/facebookfail', (req: Request, res: Response) => {
   console.log('Auth does not match');
 
-  res.status(400).redirect('http://www.myfinapi.dev/auth/confirm/oauth');
+  res.status(400).redirect('http://www.myfinapi.dev/auth/error');
 });
 export { router as facebookRouter };
