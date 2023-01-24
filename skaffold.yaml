@@ -9,8 +9,8 @@ build:
   local:
     push: false
   artifacts:
-    - image: deanrtaylor/financeauth
-      context: auth
+    - image: deanrtaylor/financeapi
+      context: api
       docker:
         dockerfile: Dockerfile
       sync:

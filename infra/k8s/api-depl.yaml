@@ -1,20 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: auth-depl
+  name: api-depl
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: auth
+      app: api
   template:
     metadata:
       labels:
-        app: auth
+        app: api
     spec:
       containers:
-        - name: auth
-          image: deanrtaylor/financeauth
+        - name: api
+          image: deanrtaylor/financeapi
           env:
             - name: MONGO_URI
               valueFrom:
@@ -92,12 +92,12 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: auth-srv
+  name: api-srv
 spec:
   selector:
-    app: auth
+    app: api
   ports:
-    - name: auth
+    - name: api
       protocol: TCP
       port: 3000
       targetPort: 3000
