@@ -46,7 +46,7 @@ passport_1.default.use(new passport_github2_1.Strategy({
 passport_1.default.use(new passport_facebook_1.Strategy({
     clientID: process.env.FACEBOOK_CLIENT_ID,
     clientSecret: process.env.FACEBOOK_CLIENT_SECRET,
-    callbackURL: `http://www.myfinapi.dev/api/users/auth/facebook/callback`,
+    callbackURL: `https://www.myfinapi.dev/api/users/auth/facebook/callback`,
     profileFields: ['id', 'emails', 'displayName'],
 }, function verify(accessToken, refreshToken, profile, cb) {
     return __awaiter(this, void 0, void 0, function* () {
