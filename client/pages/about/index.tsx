@@ -44,7 +44,7 @@ export default function About({ currentUser }: any) {
         </div>
         <div className='h-fit w-screen flex gap-8 md:gap-32 z-50 items-center justify-center '>
           <div className='w-[100%] h-fit relative p-10 flex flex-col-reverse md:flex-row justify-center items-center gap-4'>
-            <div className='w-full flex flex-col gap-8 justify-center items-center p-4 md:min-w-[450px] max-w-[1200px]'>
+            <div className='w-[90%] flex flex-col gap-8 justify-center items-center p-4 md:min-w-[450px] max-w-[1200px]'>
               <h1 className='w-full font-extrabold text-xl '>Contact</h1>
               <p className='w-full '>
                 We are in the process of adding more features to the site that
