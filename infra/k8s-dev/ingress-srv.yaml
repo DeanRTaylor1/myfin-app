@@ -24,7 +24,7 @@ spec:
                 name: api-srv
                 port:
                   number: 3000
-          - path: /?(.*) #this should be at the bottom to ensure that our api routes get called if required
+          - path: /?(.*) #this should be at the bottom to ensure that our api routes get called if required s
             pathType: Prefix
             backend:
               service:
