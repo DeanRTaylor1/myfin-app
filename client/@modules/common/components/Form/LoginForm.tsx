@@ -33,9 +33,9 @@ const LoginForm: React.FC = () => {
   };
 
   const redirectToGoogle = async () => {
-    console.log(`${process.env.NEXT_PUBLIC_API_URL}api/login/google`);
+    console.log(`/api/login/google`);
     let timer: NodeJS.Timer | null = null;
-    const googleLoginURL = `${process.env.NEXT_PUBLIC_API_URL}api/login/google`;
+    const googleLoginURL = `/api/login/google`;
     const newWindow = window.open(
       googleLoginURL,
       '_blank',
@@ -54,7 +54,7 @@ const LoginForm: React.FC = () => {
   };
   const redirectToFacebook = async () => {
     let timer: NodeJS.Timer | null = null;
-    const facebookLoginURL = `${process.env.NEXT_PUBLIC_API_URL}api/login/facebook`;
+    const facebookLoginURL = `/api/login/facebook`;
     const newWindow = window.open(
       facebookLoginURL,
       '_blank',
@@ -74,7 +74,7 @@ const LoginForm: React.FC = () => {
 
   const oAuthLogin = async (strategy: string) => {
     let timer: NodeJS.Timer | null = null;
-    const oAuthLoginURL = `${process.env.NEXT_PUBLIC_API_URL}api/login/${strategy}`;
+    const oAuthLoginURL = `/api/login/${strategy}`;
     const newWindow = window.open(
       oAuthLoginURL,
       '_blank',

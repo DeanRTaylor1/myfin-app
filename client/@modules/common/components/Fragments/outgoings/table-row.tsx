@@ -22,7 +22,7 @@ const TableRow: React.FC<TableRowProps> = ({
 }) => {
   const deleteItemHandler = async () => {
     await axios.delete(
-      `${process.env.NEXT_PUBLIC_API_URL}api/finances/outgoings`,
+      `/api/finances/outgoings`,
       {
         headers: { item: outgoing.item, userid: +outgoing.userId },
         withCredentials: true,

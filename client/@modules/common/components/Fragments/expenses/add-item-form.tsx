@@ -18,7 +18,7 @@ const AddItemForm: React.FC<any> = ({
   const [date, setDate] = useState(new Date());
 
   const { doRequest, errors } = DoRequest({
-    url: `${process.env.NEXT_PUBLIC_API_URL}api/finances/expenses`,
+    url: `/api/finances/expenses`,
     method: 'post',
     body: {
       email: currentUser.email,

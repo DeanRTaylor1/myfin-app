@@ -41,25 +41,4 @@ App.getInitialProps = async (appContext: any) => {
   return { pageProps, ...data };
 };
 
-/*
- App.getInitialProps = async (appContext: any) => {
 
-   console.log(appContext.ctx.req.cookies)
-   
-
-  const { data } = await axios.get(
-    `${process.env.NEXT_PUBLIC_API_URL}api/users/currentuser`,
-    { withCredentials: true }
-  );
-
-  let pageProps = {};
-  if (appContext.Component.getInitialProps) {
-    pageProps = await appContext.Component.getInitialProps(
-      appContext.ctx,
-      data.currentUser
-    );
-  }
-
-  return { pageProps, ...data };
-};
-*/

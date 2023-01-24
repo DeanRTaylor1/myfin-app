@@ -35,7 +35,7 @@ export default function ChartData({ stock, months }: any) {
   const getData = async (code: string) => {
     try {
       const response = await axios.get(
-        `${process.env.NEXT_PUBLIC_API_URL}api/finances/stocks/${code}`, { withCredentials: true }
+        `/api/finances/stocks/${code}`, { withCredentials: true }
       );
       const data = await response.data;
       const stockDetails = data['Meta Data'];

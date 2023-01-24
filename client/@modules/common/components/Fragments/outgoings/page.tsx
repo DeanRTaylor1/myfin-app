@@ -24,7 +24,7 @@ const OutgoingsPage: React.FC<PropsWithAuth> = ({ currentUser }) => {
 
   const getUserRecords = async (email: string) => {
     let response = await axios.get(
-      `${process.env.NEXT_PUBLIC_API_URL}api/finances/outgoings`,
+      `/api/finances/outgoings`,
       { headers: { email, page }, withCredentials: true }
     );
 

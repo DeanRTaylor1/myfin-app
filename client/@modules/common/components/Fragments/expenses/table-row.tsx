@@ -26,7 +26,7 @@ const TableRow: React.FC<ExpenseTableRowProps> = ({
 }) => {
   const deleteItemHandler = async () => {
     await axios.delete(
-      `${process.env.NEXT_PUBLIC_API_URL}api/finances/expenses`,
+      `/api/finances/expenses`,
       {
         headers: {
           item: expense.item,

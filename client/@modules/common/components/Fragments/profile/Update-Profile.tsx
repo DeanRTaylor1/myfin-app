@@ -29,7 +29,7 @@ const UpdateProfile: React.FC<PropsWithAuth> = ({ currentUser }) => {
   const [sliderColor, setSliderColor] = useState<string>('accent-yellow-400  ');
 
   let { doRequest, errors: apiRequestErrors } = DoRequest({
-    url: `${process.env.NEXT_PUBLIC_API_URL}api/finances/user`,
+    url: `/api/finances/user`,
     method: 'post',
     body: {
       ...state,
@@ -56,7 +56,7 @@ const UpdateProfile: React.FC<PropsWithAuth> = ({ currentUser }) => {
 
   const getUserData = async (email: string) => {
     let response = await axios.post(
-      `${process.env.NEXT_PUBLIC_API_URL}api/finances`,
+      `/api/finances`,
       { email },
       { withCredentials: true }
     );

@@ -10,7 +10,7 @@ const Confirm: React.FC = () => {
   const router = useRouter();
   const { userid } = router.query;
   const { doRequest, errors } = DoRequest({
-    url: `${process.env.NEXT_PUBLIC_API_URL}api/users/confirmation`,
+    url: `/api/users/confirmation`,
     method: 'put',
     body: { userid },
     onSuccess: () => {

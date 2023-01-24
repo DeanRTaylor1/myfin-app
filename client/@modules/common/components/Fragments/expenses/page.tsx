@@ -26,7 +26,7 @@ const ExpensesPage: React.FC<PropsWithAuth> = ({ currentUser }) => {
 
   const getUserRecords = async (email: string) => {
     let response = await axios.get(
-      `${process.env.NEXT_PUBLIC_API_URL}api/finances/expenses`,
+      `/api/finances/expenses`,
       { headers: { email, page }, withCredentials: true }
     );
     setUserExpenses(response.data);
@@ -36,7 +36,7 @@ const ExpensesPage: React.FC<PropsWithAuth> = ({ currentUser }) => {
 
   const getCount = async (email: string) => {
     let { data } = await axios.get(
-      `${process.env.NEXT_PUBLIC_API_URL}api/finances/expenses/count`,
+      `/api/finances/expenses/count`,
       { headers: { email }, withCredentials: true }
     );
     //console.log(data.count);

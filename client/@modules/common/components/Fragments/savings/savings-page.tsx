@@ -29,7 +29,7 @@ const SavingsPage: React.FC<PropsWithAuth> = ({ currentUser }) => {
 
   const getUserData = async (email: string, startDate: Date, endDate: Date) => {
     let response = await axios.get(
-      `${process.env.NEXT_PUBLIC_API_URL}api/finances/outgoings/dashboard`,
+      `/api/finances/outgoings/dashboard`,
       {
         headers: {
           email,

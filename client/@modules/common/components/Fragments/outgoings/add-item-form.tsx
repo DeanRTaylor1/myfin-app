@@ -15,7 +15,7 @@ const AddItemForm: React.FC<any> = ({
   const [currency, setCurrency] = useState('usd');
 
   const { doRequest, errors } = DoRequest({
-    url: `${process.env.NEXT_PUBLIC_API_URL}api/finances/outgoings`,
+    url: `/api/finances/outgoings`,
     method: 'post',
     body: { email: currentUser.email, item: itemName, tag, cost, currency },
     onSuccess: () => {

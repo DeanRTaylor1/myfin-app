@@ -20,7 +20,7 @@ const SignupForm: React.FC = () => {
   });
 
   let { doRequest, errors: apiRequestErrors } = DoRequest({
-    url: `${process.env.NEXT_PUBLIC_API_URL}api/users/signup`,
+    url: `/api/users/signup`,
     method: 'post',
     body: inputs,
     onSuccess: () => Router.push('/'),

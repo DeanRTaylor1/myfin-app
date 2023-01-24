@@ -22,7 +22,7 @@ const ProfilePage: React.FC<any> = ({ currentUser }) => {
 
   const doRequest = async (email: string) => {
     try {
-      await axios.delete(`${process.env.NEXT_PUBLIC_API_URL}api/users`, {
+      await axios.delete(`/api/users`, {
         headers: { email },
         withCredentials: true,
       });
@@ -35,7 +35,7 @@ const ProfilePage: React.FC<any> = ({ currentUser }) => {
 
   const getUserData = async (email: string) => {
     let response = await axios.post(
-      `${process.env.NEXT_PUBLIC_API_URL}api/finances`,
+      `/api/finances`,
       { email },
       { withCredentials: true }
     );
