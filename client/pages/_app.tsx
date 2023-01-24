@@ -21,6 +21,16 @@ export default function App({
     <BaseLayout currentUser={currentUser}>
       <Head>
         <title>My Fin - Personal Finance Planner</title>
+        <meta name='description' content='MyFin - Personal Finance Planner' />
+        <link rel='icon' href='/favicon.ico' />
+        <meta property='og:title' content='MyFin' />
+        <meta property='og:type' content='website' />
+        <meta property='og:url' content='https://www.myfinapi.dev' />
+        <meta property='og:image' content='/social-image.jpg' />
+        <meta
+          property='og:description'
+          content='MyFin - Personal Finance Plannig made easy.'
+        />
       </Head>
       <Component {...pageProps} currentUser={currentUser} />
     </BaseLayout>
@@ -40,5 +50,3 @@ App.getInitialProps = async (appContext: any) => {
 
   return { pageProps, ...data };
 };
-
-
