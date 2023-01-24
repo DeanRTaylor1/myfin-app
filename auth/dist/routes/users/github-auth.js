@@ -32,5 +32,5 @@ router.get('/api/users/githubconfirm', (req, res) => {
 });
 router.get('/api/users/githubfail', (req, res) => {
     console.log('Auth does not match');
-    res.status(400).redirect('http://www.myfinapi.dev/auth/confirm/oauth');
+    res.status(400).redirect('http://www.myfinapi.dev/auth/error');
 });
