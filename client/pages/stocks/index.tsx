@@ -28,7 +28,7 @@ export default function Stocks({ currentUser }: any) {
   const [months, setMonths] = useState<number>(DEFAULT_MONTHS);
 
   const getStockCode = (e: React.FormEvent<HTMLSelectElement>) => {
-    console.log(stocks)
+    //console.log(stocks)
     setStockCode(e.currentTarget.value);
   };
 
@@ -57,14 +57,12 @@ export default function Stocks({ currentUser }: any) {
       'stocks',
       JSON.stringify(temp)
     );
-    setIsLoading(true);
+    
     setStocks(temp);
     setStockCode(DEFAULT_STOCK);
     setMonths(DEFAULT_MONTHS);
 
-    setTimeout(() => {
-        setIsLoading(false)
-      }, 1000)
+   
   };
 
   const deleteStockHandler = (stockCode: string) => {

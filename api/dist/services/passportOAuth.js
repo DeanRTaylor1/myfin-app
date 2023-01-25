@@ -50,14 +50,14 @@ passport_1.default.use(new passport_facebook_1.Strategy({
     profileFields: ['id', 'emails', 'displayName'],
 }, function verify(accessToken, refreshToken, profile, cb) {
     return __awaiter(this, void 0, void 0, function* () {
-        console.log(profile.displayName);
+        //console.log(profile.displayName);
         const githubUser = {
             id: profile.id,
             email: profile.emails[0].value,
             username: profile.displayName,
         };
         let user = yield user_model_1.User.findByEmail(githubUser.email);
-        console.log(user);
+        //console.log(user);
         if (user && user.authStrategy !== 'facebook') {
             console.log('fail');
             return cb(null, null);
@@ -75,7 +75,9 @@ passport_1.default.use(new GoogleStrategy({
     callbackURL: `http://www.myfinapi.dev/api/users/auth/google/callback`,
     state: true,
 }, (req, accessToken, refreshToken, profile, cb) => __awaiter(void 0, void 0, void 0, function* () {
-    console.log('profile' + profile.provider + ' ' + profile.email + ' ' + profile.id);
+    //console.log(
+    //'profile' + profile.provider + ' ' + profile.email + ' ' + profile.id
+    //);
     const googleUser = {
         id: profile.id,
         email: profile.email,

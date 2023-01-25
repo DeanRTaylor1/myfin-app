@@ -63,14 +63,14 @@ passport.use(
       profileFields: ['id', 'emails', 'displayName'],
     },
     async function verify(accessToken, refreshToken, profile, cb) {
-      console.log(profile.displayName);
+      //console.log(profile.displayName);
       const githubUser = {
         id: profile.id,
         email: profile.emails![0].value,
         username: profile.displayName,
       };
       let user = await User.findByEmail(githubUser.email!);
-      console.log(user);
+      //console.log(user);
       if (user && user.authStrategy !== 'facebook') {
         console.log('fail');
         return cb(null, null);
@@ -105,9 +105,9 @@ passport.use(
       profile: any,
       cb: VerifyCallback
     ) => {
-      console.log(
-        'profile' + profile.provider + ' ' + profile.email + ' ' + profile.id
-      );
+      //console.log(
+        //'profile' + profile.provider + ' ' + profile.email + ' ' + profile.id
+      //);
       const googleUser = {
         id: profile.id,
         email: profile.email,

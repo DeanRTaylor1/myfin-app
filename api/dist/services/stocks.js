@@ -23,7 +23,9 @@ const stockHandler = (code) => __awaiter(void 0, void 0, void 0, function* () {
             if (err) {
                 console.log(err);
             }
-            console.log(`Data written to /${code}.txt`);
+            else {
+                console.log(`Data successfully written to /${code}.txt at ` + new Date(Date.now()).toISOString());
+            }
         });
     }
     catch (err) {

@@ -43,7 +43,7 @@ const start = async () => {
 
     fetchStocks();
     //refetch stock data every midnight
-    cron.schedule('0 0 0 * * *', () => {
+    cron.schedule('0 0 * * *', () => {
       console.log('Cron running');
       fetchStocks();
     });

@@ -54,7 +54,7 @@ const LineChart: React.FC<chartProps> = ({
       const item: any = value;
       temp.push(item['4. close']);
     }
-    setPrices(temp);
+    setPrices(temp.reverse());
   }, [stockData]);
 
   const options = {

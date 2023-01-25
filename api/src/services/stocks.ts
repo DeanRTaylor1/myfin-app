@@ -10,8 +10,10 @@ export const stockHandler = async (code: string) => {
     fs.writeFile(`${__dirname}/stock-data/${code}.txt`, JSON.stringify(data), 'utf-8', (err) => {
       if (err) {
         console.log(err)
+      } else {
+
+        console.log(`Data successfully written to /${code}.txt at ` +  new Date(Date.now()).toISOString())
       }
-      console.log(`Data written to /${code}.txt`)
 
     })
 

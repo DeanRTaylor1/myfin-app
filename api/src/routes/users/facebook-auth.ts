@@ -19,16 +19,16 @@ router.get(
     failureRedirect: '/api/users/facebookfail',
   }),
   (req, res) => {
-    console.log('Req:' + req);
+    //console.log('Req:' + req);
 
     res.send('Thank you for signing in!');
   }
 );
 
 router.get('/api/users/facebookconfirm', (req: Request, res: Response) => {
-  console.log(req.session?.passport.user);
+  //console.log(req.session?.passport.user);
   const { id, username, email } = req.session?.passport.user;
-  console.log('id: ' + id);
+  //console.log('id: ' + id);
   const userJwt = jwt.sign({ id, username, email }, process.env.JWT_KEY!);
   //env variable checked in index.ts
   //store in session object

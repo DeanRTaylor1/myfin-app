@@ -26,9 +26,9 @@ router.get(
 );
 
 router.get('/api/users/googleconfirm', (req: Request, res: Response) => {
-  console.log(req.session?.passport.user);
+  //console.log(req.session?.passport.user);
   const { id, username, email } = req.session?.passport.user;
-  console.log('id: ' + id);
+  //console.log('id: ' + id);
   const userJwt = jwt.sign({ id, username, email }, process.env.JWT_KEY!);
   //env variable checked in index.ts
   //store in session object

@@ -20,10 +20,10 @@ router.get('/api/users/auth/google/callback', passport_1.default.authenticate('g
     res.send('Thank you for signing in!');
 });
 router.get('/api/users/googleconfirm', (req, res) => {
-    var _a, _b;
-    console.log((_a = req.session) === null || _a === void 0 ? void 0 : _a.passport.user);
-    const { id, username, email } = (_b = req.session) === null || _b === void 0 ? void 0 : _b.passport.user;
-    console.log('id: ' + id);
+    var _a;
+    //console.log(req.session?.passport.user);
+    const { id, username, email } = (_a = req.session) === null || _a === void 0 ? void 0 : _a.passport.user;
+    //console.log('id: ' + id);
     const userJwt = jsonwebtoken_1.default.sign({ id, username, email }, process.env.JWT_KEY);
     //env variable checked in index.ts
     //store in session object

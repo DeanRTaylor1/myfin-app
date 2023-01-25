@@ -9,6 +9,6 @@ const common_1 = require("../../common");
 const router = express_1.default.Router();
 exports.currentUserRouter = router;
 router.get('/api/users/currentuser', common_1.currentUser, (req, res) => {
-    console.log(req.session);
+    //console.log(req.session);
     res.send({ currentUser: req.currentUser || null });
 });

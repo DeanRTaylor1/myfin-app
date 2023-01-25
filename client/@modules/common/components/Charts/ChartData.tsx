@@ -44,14 +44,14 @@ export default function ChartData({ stock, months }: any) {
       setFinalDates(dates);
       setDetails(stockDetails);
       setfinalStockData(stockData);
-      console.log(code, data)
+     // console.log(code, data)
     } catch (err) {
       console.log(err);
     }
   };
 
   useEffect(() => {
-    console.log(stock, months)
+   // console.log(stock, months)
     getData(stock);
     const timer = setTimeout(() => {
       setIsLoading(false);

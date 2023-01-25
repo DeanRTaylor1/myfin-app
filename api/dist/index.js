@@ -49,7 +49,7 @@ const start = () => __awaiter(void 0, void 0, void 0, function* () {
         });
         (0, stocks_1.fetchStocks)();
         //refetch stock data every midnight
-        node_cron_1.default.schedule('0 0 0 * * *', () => {
+        node_cron_1.default.schedule('0 0 * * *', () => {
             console.log('Cron running');
             (0, stocks_1.fetchStocks)();
         });
