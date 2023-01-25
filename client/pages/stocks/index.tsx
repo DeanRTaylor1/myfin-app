@@ -72,6 +72,7 @@ export default function Stocks({ currentUser }: any) {
   };
 
   const deleteStockHandler = (stockCode: string) => {
+    setIsLoading(true);
     let temp = null;
     if (stocks!.length === 1) {
       temp = null;
@@ -81,6 +82,9 @@ export default function Stocks({ currentUser }: any) {
     }
     setStocks(temp);
     window.localStorage.setItem('stocks', JSON.stringify(temp));
+    setTimeout(() => {
+      setIsLoading(false)
+    }, 1000)
 
 
   };
