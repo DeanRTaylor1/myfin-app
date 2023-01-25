@@ -15,9 +15,9 @@ const DEFAULT_MONTHS = 12;
 
 
 type stockChartProps = {
-      code: string,
-      months: number
-  }
+  code: string,
+  months: number
+}
 
 
 export default function Stocks({ currentUser }: any) {
@@ -53,16 +53,22 @@ export default function Stocks({ currentUser }: any) {
 
   const addStockHandler = () => {
     const temp = stocks ? [...stocks!, { code: stockCode, months }] : [{ code: stockCode, months }];
-      window.localStorage.setItem(
+    window.localStorage.setItem(
       'stocks',
       JSON.stringify(temp)
     );
-    
+
+    setIsLoading(true);
+
     setStocks(temp);
     setStockCode(DEFAULT_STOCK);
     setMonths(DEFAULT_MONTHS);
 
-   
+    setTimeout(() => {
+      setIsLoading(false)
+    }, 1000)
+
+
   };
 
   const deleteStockHandler = (stockCode: string) => {
@@ -75,21 +81,21 @@ export default function Stocks({ currentUser }: any) {
     }
     setStocks(temp);
     window.localStorage.setItem('stocks', JSON.stringify(temp));
-    
+
 
   };
 
-    const memoList = useMemo(()=> stocks?.map((stock, index) => {
-              return (
-                <StockContainer
-                  key={index}
-                  code={stock.code}
-                  deleteHandler={deleteStockHandler}
-                >
-                  <ChartData stock={stock.code} months={stock.months} />
-                </StockContainer>
-              );
-            }), [stocks])
+  const memoList = useMemo(() => stocks?.map((stock, index) => {
+    return (
+      <StockContainer
+        key={index}
+        code={stock.code}
+        deleteHandler={deleteStockHandler}
+      >
+        <ChartData stock={stock.code} months={stock.months} />
+      </StockContainer>
+    );
+  }), [stocks])
 
   if (isLoading) {
     return (
@@ -107,7 +113,7 @@ export default function Stocks({ currentUser }: any) {
     return (
       <Fragment>
         <PageContainer>
-          {stocks && memoList }
+          {stocks && memoList}
 
           {!isLoading && (!stocks || stocks.length < 6) && (
             <SquareContainer>
