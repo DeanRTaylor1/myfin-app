@@ -5,12 +5,13 @@
 ## Features:
 
 - Nextjs
-- express/TS
-- MongoDB
+- Express/Typescript API
+- MongoDB + Mongoose + Scrypt for Local Auth Strategy
+- OAuth Strategy via Facebook, Github and Google
 - Postgres/aws
-- Models built in TS and SQL, no ORM used
-- Nats-streaming for event driven async microservices
+- PG/SQL queries and models written manually without ORM. 
 - Kubernetes + nginx load balancer and Docker for all microservices
+- CI/CD via github actions for automated deployment
 
 ## Quick Links
 - [TDD](https://github.com/DeanRTaylor1/myfin-app/tree/main/api/src/routes/__test__)
